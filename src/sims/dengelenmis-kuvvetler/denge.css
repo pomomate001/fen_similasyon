@@ -1,0 +1,400 @@
+/* Dengelenmiş ve Dengelenmemiş Kuvvetler — siyah-beyaz çizim dili.
+   Kırmızı yalnızca telefon ve balonlar içindir; arayüz de tek renklidir. */
+.dg-root {
+  --dg-ink: #161616;
+  --dg-paper: #fcfcfa;
+  --dg-soft: #f0f0ec;
+  position: absolute;
+  inset: 0;
+  background: var(--dg-paper);
+  color: var(--dg-ink);
+  overflow: hidden;
+}
+
+.dg-label {
+  font-family: var(--font);
+  font-weight: 750;
+  fill: var(--dg-ink);
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 9px;
+  stroke-linejoin: round;
+}
+
+.dg-balloon.is-live {
+  cursor: grab;
+}
+
+.dg-balloon.is-drag {
+  cursor: grabbing;
+}
+
+/* ---- Düğmeler ---- */
+.dg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 84px;
+  min-width: 84px;
+  padding: 0 28px;
+  border-radius: 999px;
+  border: 3px solid var(--dg-ink);
+  background: #fff;
+  color: var(--dg-ink);
+  font-family: var(--font);
+  font-size: 26px;
+  font-weight: 650;
+  cursor: pointer;
+  white-space: nowrap;
+  touch-action: manipulation;
+  transition:
+    transform 0.12s ease,
+    background 0.15s ease,
+    color 0.15s ease,
+    opacity 0.2s ease;
+}
+
+.dg-btn:active {
+  transform: scale(0.96);
+}
+
+.dg-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+  transform: none;
+}
+
+.dg-btn.is-on {
+  background: var(--dg-ink);
+  color: #fff;
+}
+
+.dg-btn svg {
+  width: 34px;
+  height: 34px;
+  flex: none;
+}
+
+.dg-icon {
+  width: 84px;
+  padding: 0;
+}
+
+/* ---- Üst çubuk ---- */
+.dg-top {
+  position: absolute;
+  top: 22px;
+  left: 26px;
+  right: 26px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.dg-top > * {
+  pointer-events: auto;
+}
+
+.dg-seg {
+  display: inline-flex;
+  height: 84px;
+  padding: 6px;
+  border: 3px solid var(--dg-ink);
+  border-radius: 999px;
+  background: #fff;
+}
+
+.dg-seg button {
+  min-width: 128px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--font);
+  font-size: 26px;
+  font-weight: 650;
+  color: var(--dg-ink);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.dg-seg button.is-on {
+  background: var(--dg-ink);
+  color: #fff;
+}
+
+.dg-title {
+  margin: 0 auto;
+  padding: 16px 30px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ---- Başlat ---- */
+.dg-start {
+  position: absolute;
+  left: 50%;
+  bottom: 74px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  height: 120px;
+  padding: 0 70px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--dg-ink);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 44px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 0 rgba(0, 0, 0, 0.12);
+  animation: dg-pulse 2.4s ease-in-out infinite;
+  touch-action: manipulation;
+  z-index: 10;
+}
+
+.dg-start svg {
+  width: 46px;
+  height: 46px;
+}
+
+.dg-start:active {
+  transform: translateX(-50%) scale(0.97);
+}
+
+@keyframes dg-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 22, 22, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 18px rgba(22, 22, 22, 0);
+  }
+}
+
+.dg-skip {
+  position: absolute;
+  right: 26px;
+  bottom: 26px;
+  z-index: 10;
+}
+
+/* ---- Alt araç çubuğu ---- */
+.dg-toolbar {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 3px solid var(--dg-ink);
+  border-radius: 999px;
+  background: #fff;
+  transform: translate(-50%, 160px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1),
+    opacity 0.4s ease;
+  z-index: 10;
+}
+
+.dg-toolbar.is-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dg-toolbar .dg-btn {
+  height: 80px;
+  border-width: 0;
+  background: var(--dg-soft);
+}
+
+.dg-toolbar .dg-btn.is-on {
+  background: var(--dg-ink);
+}
+
+.dg-toolbar .dg-icon {
+  width: 80px;
+}
+
+.dg-sep {
+  width: 3px;
+  height: 52px;
+  margin: 0 4px;
+  border-radius: 2px;
+  background: #d4d4ce;
+}
+
+.dg-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 92px;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.dg-count svg {
+  width: 30px;
+  height: 38px;
+}
+
+/* ---- Bileşke kartı ---- */
+.dg-card {
+  position: absolute;
+  top: 128px;
+  left: 26px;
+  padding: 14px 32px 18px;
+  border: 3px solid var(--dg-ink);
+  border-radius: 26px;
+  background: #fff;
+  text-align: left;
+  pointer-events: none;
+  z-index: 9;
+  animation: dg-in 0.3s ease both;
+}
+
+.dg-card-k {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5c5c58;
+}
+
+.dg-card-v {
+  margin-top: 2px;
+  font-size: 40px;
+  font-weight: 750;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes dg-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* ---- Yedek balon tepsisi ---- */
+.dg-tray {
+  position: absolute;
+  right: 40px;
+  bottom: 140px;
+  padding: 10px 8px 4px;
+  border: 3px dashed var(--dg-ink);
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.92);
+  opacity: 0;
+  transform: translateX(240px);
+  pointer-events: none;
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) 0.15s,
+    opacity 0.4s ease 0.15s;
+  z-index: 10;
+}
+
+.dg-tray.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.dg-tray.is-empty {
+  opacity: 0.35;
+}
+
+.dg-tray-item {
+  cursor: grab;
+  touch-action: none;
+  animation: dg-bob 3s ease-in-out infinite;
+}
+
+.dg-tray-item svg {
+  display: block;
+}
+
+@keyframes dg-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.dg-paused {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 18px 40px;
+  border-radius: 999px;
+  background: var(--dg-ink);
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 11;
+}
+
+/* ---- Öğretmen notları ---- */
+.dg-notes {
+  position: absolute;
+  top: 124px;
+  right: 26px;
+  width: 620px;
+  padding: 26px 32px;
+  border: 3px solid var(--dg-ink);
+  border-radius: 28px;
+  background: #fff;
+  z-index: 12;
+  animation: dg-fade 0.25s ease both;
+}
+
+.dg-notes h3 {
+  margin: 0 0 10px;
+  font-size: 30px;
+}
+
+.dg-notes ul {
+  margin: 0;
+  padding-left: 26px;
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.dg-notes li + li {
+  margin-top: 8px;
+}
+
+@keyframes dg-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.dg-title {
+  transition: opacity 0.4s ease;
+}
+
+.dg-title.is-hidden {
+  opacity: 0;
+}

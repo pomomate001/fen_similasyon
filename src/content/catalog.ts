@@ -83,7 +83,11 @@ export const catalog: Subject = {
                 {
                   id: 'dengelenmis-kuvvetler',
                   title: 'Dengelenmiş ve Dengelenmemiş Kuvvetler',
-                  status: 'yakinda',
+                  status: 'hazir',
+                  simId: 'dengelenmis-kuvvetler',
+                  summary:
+                    'Telefona dalan öğrenci uçurumdan düşer; çantasından açılan balonlar onu havada tutar. Balon ekleyip çıkarın, dengeyi bozun.',
+                  minutes: '5–10 dk',
                 },
               ],
             },

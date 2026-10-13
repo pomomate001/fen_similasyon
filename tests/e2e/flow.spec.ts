@@ -14,7 +14,7 @@ test('öğrenci simülasyonu baştan sona tamamlar', async ({ page }) => {
   const errors = collectErrors(page);
   await page.goto(`/?${FAST}#/`);
   await expect(page.getByTestId('home')).toBeVisible();
-  await expect(page.getByTestId('soon-dengelenmis-kuvvetler')).toBeVisible();
+  await expect(page.getByTestId('ready-dengelenmis-kuvvetler')).toBeVisible();
   await page.getByTestId('start').click();
 
   // S1–S2: izle, tartış, devam et

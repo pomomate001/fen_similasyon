@@ -263,6 +263,82 @@
   gap: 26px;
 }
 
+.ready-card {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  padding: 22px;
+  border: 0;
+  border-radius: 32px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--ink);
+  transition: transform 0.12s ease;
+}
+
+.ready-card:active {
+  transform: scale(0.98);
+}
+
+.ready-art {
+  width: 150px;
+  height: 125px;
+  flex: none;
+  border-radius: 20px;
+  border: 2px solid #161616;
+}
+
+.ready-body {
+  min-width: 0;
+}
+
+.ready-body .soon-section {
+  margin-top: 0;
+  color: var(--ink-faint);
+}
+
+.ready-title {
+  margin-top: 4px;
+  font-size: 28px;
+  font-weight: 750;
+  line-height: 1.15;
+}
+
+.ready-summary {
+  margin: 8px 0 12px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.ready-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 60px;
+  padding: 0 26px;
+  border-radius: 999px;
+  background: #161616;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ready-go svg {
+  width: 26px;
+  height: 26px;
+}
+
+.ready-go small {
+  margin-left: 6px;
+  font-size: 17px;
+  font-weight: 550;
+  opacity: 0.75;
+}
+
 .soon-card {
   padding: 30px 34px;
   border-radius: 32px;

@@ -88,7 +88,7 @@ test.describe('öğretmen kontrolleri', () => {
     await page.getByRole('button', { name: 'Ana sayfa' }).click();
     await page.getByRole('button', { name: 'Ana sayfaya dön' }).click();
     await expect(page.getByTestId('home')).toBeVisible();
-    const soon = page.getByTestId('soon-dengelenmis-kuvvetler');
+    const soon = page.getByTestId('soon-surat-hiz');
     await expect(soon).toHaveAttribute('aria-disabled', 'true');
     await soon.click();
     await expect(page.getByTestId('home')).toBeVisible();

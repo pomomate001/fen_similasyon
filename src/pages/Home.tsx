@@ -12,9 +12,12 @@ export function Home() {
   const unit = grade.units[0];
   const featured = unit.sections[0].topics.find((t) => t.status === 'hazir')!;
   const upcoming: Array<{ section: string; topic: Topic }> = [];
+  const others: Array<{ section: string; topic: Topic }> = [];
   unit.sections.forEach((s) =>
     s.topics.forEach((t) => {
-      if (t.status === 'yakinda') upcoming.push({ section: `${s.no}. Bölüm · ${s.title}`, topic: t });
+      const section = `${s.no}. Bölüm · ${s.title}`;
+      if (t.status === 'yakinda') upcoming.push({ section, topic: t });
+      else if (t !== featured) others.push({ section, topic: t });
     }),
   );
 
@@ -100,7 +103,28 @@ export function Home() {
           </div>
         </article>
 
-        <aside className="upcoming" aria-label="Yakında">
+        <aside className="upcoming" aria-label="Diğer simülasyonlar">
+          {others.map(({ section, topic }) => (
+            <button
+              className="ready-card"
+              key={topic.id}
+              data-testid={`ready-${topic.id}`}
+              onClick={() => {
+                sfx.unlock();
+                navigate(`/sim/${topic.simId}`);
+              }}
+            >
+              <ReadyArt />
+              <div className="ready-body">
+                <div className="soon-section">{section}</div>
+                <div className="ready-title">{topic.title}</div>
+                <p className="ready-summary">{topic.summary}</p>
+                <span className="ready-go">
+                  <IconPlay /> Başlat{topic.minutes ? <small>≈ {topic.minutes}</small> : null}
+                </span>
+              </div>
+            </button>
+          ))}
           {upcoming.map(({ section, topic }) => (
             <div className="soon-card" key={topic.id} aria-disabled="true" data-testid={`soon-${topic.id}`}>
               <div className="soon-tag">
@@ -115,6 +139,35 @@ export function Home() {
         <footer className="home-foot">Akıllı tahta için tasarlandı · Anlatımı duymak için hoparlörü açın</footer>
       </div>
     </Stage>
+  );
+}
+
+/** Siyah-beyaz önizleme: balonlarla asılı kalan öğrenci (kırmızı yalnızca balonlarda) */
+function ReadyArt() {
+  const b = (x: number, y: number) => (
+    <g key={`${x}-${y}`}>
+      <path d={`M${x},${y + 20} L120,112`} stroke="#161616" strokeWidth="2" />
+      <ellipse cx={x} cy={y} rx="15" ry="19" fill="#e0262b" stroke="#8f1418" strokeWidth="2.5" />
+    </g>
+  );
+  return (
+    <svg className="ready-art" viewBox="0 0 240 200" aria-hidden="true">
+      <rect width="240" height="200" rx="22" fill="#fcfcfa" />
+      <path d="M0,70 L60,70 L56,110 L62,150 L54,200 L0,200 Z" fill="#fff" stroke="#161616" strokeWidth="3.5" strokeLinejoin="round" />
+      <path d="M8,96 l30,-8 M6,130 l40,-6 M10,170 l34,-6" stroke="#161616" strokeWidth="2" opacity="0.6" />
+      {[
+        [84, 46],
+        [104, 30],
+        [124, 40],
+        [144, 28],
+        [162, 48],
+      ].map(([x, y]) => b(x, y))}
+      <rect x="92" y="118" width="70" height="20" rx="10" fill="#fff" stroke="#161616" strokeWidth="3" />
+      <rect x="106" y="106" width="30" height="16" rx="5" fill="#cfcfca" stroke="#161616" strokeWidth="2.5" />
+      <circle cx="176" cy="132" r="13" fill="#fff" stroke="#161616" strokeWidth="3" />
+      <path d="M170,124 q8,-10 18,0" fill="#161616" />
+      <path d="M150,138 l4,22 M134,138 l0,22 M96,132 l-14,18 M108,136 l-6,20" stroke="#161616" strokeWidth="5" strokeLinecap="round" />
+    </svg>
   );
 }
 

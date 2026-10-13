@@ -17,6 +17,9 @@ Sonraki geliştirmelerde tutarlılık için önemli kararlar ve gerekçeleri.
 | K9 | Hareket animasyonları: durgun cisim **giderek hızlanarak** bileşke yönünde harekete geçer; sahne **donmuş kareyle** biter | Sabit hızla kayma ya da kendiliğinden yavaşlayıp durma, yanlış kuvvet–hareket fikri verir. |
 | K10 | Değerler temsilîdir; elma ≈ 1 N, "1 kare = x N" ölçeği her diyagramda görünür | Gerçekçi olmayan sayıların gerçekmiş gibi sunulmaması. |
 | K12 | 1. bölümün adı **"Kuvveti Tanıyalım"** | Öğretmen tercihi; "Kuvveti Görmek" Türkçede doğal durmuyordu. |
+| K13 | Dengelenmiş/dengelenmemiş simülasyonu **anlatımsız**, siyah-beyaz; kırmızı yalnızca telefon ve balonlarda | Öğretmen tercihi: konuyu öğretmen anlatır, simülasyon güçlü bir giriş/bağlam sağlar. Kuvvet okları siyah, bileşke içi taralı ok (K8'in kırmızı/mavi kuralı bu simülasyonda uygulanmaz). |
+| K14 | Ağırlık 500 N, her balon 100 N; **hava direnci yok** | Ders kitabı s. 57: dengelenmiş kuvvetler etkisindeki cisim duruyorsa durur, hareket ediyorsa sabit süratle devam eder. Düşerken balon geri eklenince düşüş sabit süratle sürer. |
+| K15 | Telefon düşerken elden kayar ve düşmeye devam eder | Akılda kalıcı an; ayrıca kuvvetleri dengelenmemiş bir cisim örneği. |
 | K11 | Yalnızca 6 temel görev + 1 yıldızlı görev; süre sınırı ve puan yok | Talimattaki oyunlaştırma sınırları; görevler ders kitabı pekiştirme istasyonlarıyla örtüşür. |
 
 ## Teknik

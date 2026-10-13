@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ComponentType } from 'react';
 import type { SimDef } from './engine/types';
 import { Home } from './pages/Home';
 import { navigate, useRoute } from './router';
-import { simRegistry } from './sims/registry';
+import { simRegistry, standaloneRegistry, type StandaloneSimProps } from './sims/registry';
 import { SimPlayer, type PlayerSettings } from './ui/SimPlayer';
 
 export function App() {
   const route = useRoute();
+  if (route.name === 'sim' && route.simId && standaloneRegistry[route.simId]) {
+    return <StandaloneLoader key={`${route.simId}?${route.params.toString()}`} simId={route.simId} params={route.params} />;
+  }
   if (route.name === 'sim' && route.simId && simRegistry[route.simId]) {
     const p = route.params;
     const settings: PlayerSettings = {
@@ -34,4 +37,21 @@ function SimLoader({ simId, settings }: { simId: string; settings: PlayerSetting
   if (error) return <div style={{ color: '#fff', padding: 40, fontSize: 28 }}>Simülasyon yüklenemedi.</div>;
   if (!sim) return null;
   return <SimPlayer sim={sim} settings={settings} onExit={() => navigate('/')} />;
+}
+
+function StandaloneLoader({ simId, params }: { simId: string; params: URLSearchParams }) {
+  const [Comp, setComp] = useState<ComponentType<StandaloneSimProps> | null>(null);
+  const [error, setError] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    standaloneRegistry[simId]()
+      .then((c) => alive && setComp(() => c))
+      .catch(() => alive && setError(true));
+    return () => {
+      alive = false;
+    };
+  }, [simId]);
+  if (error) return <div style={{ color: '#fff', padding: 40, fontSize: 28 }}>Simülasyon yüklenemedi.</div>;
+  if (!Comp) return null;
+  return <Comp params={params} onExit={() => navigate('/')} />;
 }

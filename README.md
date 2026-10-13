@@ -3,8 +3,12 @@
 Türkiye Yüzyılı Maarif Modeli'ne uygun, akıllı tahtaya (FATİH) ve dokunmatik kullanıma göre tasarlanmış
 etkileşimli fen bilimleri simülasyonları.
 
-**İlk simülasyon:** 6. Sınıf · 2. Ünite *Kuvvetin Etkisinde Hareket* · 1. Bölüm · **Bileşke Kuvvet**
-(öğrenme çıktısı **FB.6.2.1**).
+**Simülasyonlar:** 6. Sınıf · 2. Ünite *Kuvvetin Etkisinde Hareket* · 1. Bölüm
+1. **Bileşke Kuvvet** (öğrenme çıktısı **FB.6.2.1**) — anlatımlı, 11 sahne.
+2. **Dengelenmiş ve Dengelenmemiş Kuvvetler** — anlatımsız, tek sahne, siyah-beyaz çizim.
+   Telefona dalan öğrenci uçurumdan düşer, çantasından açılan 5 balon onu havada tutar;
+   öğretmen balon ekleyip çıkararak dengeyi bozar (`#/sim/dengelenmis-kuvvetler`).
+   Kısayollar: + / − balon · K kuvvetler · B bileşke · Boşluk duraklat.
 
 ## Çalıştırma
 
@@ -57,6 +61,8 @@ src/
   content/       catalog.ts — Ders → Sınıf → Ünite → Bölüm → Konu hiyerarşisi
   sims/
     registry.ts  Simülasyon kayıtları (gerektiğinde yüklenir)
+    dengelenmis-kuvvetler/  Anlatımsız tek sahne (standaloneRegistry): model.ts (500 N, 5 × 100 N),
+                            Kid.tsx (eklemli karakter), World.tsx (döşemeli sonsuz arka plan)
     bileske-kuvvet/
       index.ts            Sahne listesi + öğretmen notları
       narration.tr.json   Tüm anlatım metinleri (sahne kodundan ayrı)

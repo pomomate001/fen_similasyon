@@ -130,6 +130,29 @@ export const sfx = {
   tap() {
     tone(520, 0, 0.06, 0.04, 'triangle');
   },
+  /** Telefon bildirimi */
+  ding() {
+    tone(1318, 0, 0.22, 0.05);
+    tone(1760, 0.1, 0.3, 0.04);
+  },
+  /** Yumuşak ayak sesi */
+  step() {
+    noiseBurst({ dur: 0.06, gain: 0.05, type: 'lowpass', freq: 520 });
+  },
+  /** Çanta kapağının fırlaması */
+  pop() {
+    drop(520, 170, 0.09, 0.18);
+    noiseBurst({ dur: 0.05, gain: 0.14, type: 'bandpass', freq: 1800, q: 1.5 });
+  },
+  /** Balonun şişmesi: yükselen hışırtı */
+  inflate() {
+    noiseBurst({ dur: 0.36, gain: 0.05, type: 'bandpass', freq: 800, freqEnd: 2600, q: 1.2, attack: 0.26 });
+  },
+  /** Balonun bırakılıp uçması */
+  release() {
+    noiseBurst({ dur: 0.28, gain: 0.05, type: 'highpass', freq: 1800, freqEnd: 5000 });
+    tone(880, 0, 0.14, 0.03, 'triangle');
+  },
   /** Kullanıcı hareketiyle ses bağlamını açar (tarayıcı otomatik oynatma kuralı). */
   unlock() {
     ac();

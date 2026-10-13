@@ -78,9 +78,9 @@
     "duration": 6.11
   },
   "s3.etkinlik.dogru": {
-    "text": "Harika! Kuvvetin dört özelliğini de doğru yerleştirdiniz.",
+    "text": "Tebrikler! Kuvvetin dört özelliğini de doğru yerleştirdiniz.",
     "file": "s3.etkinlik.dogru.mp3",
-    "duration": 3.21
+    "duration": 3.42
   },
   "s3.transfer": {
     "text": "Bu kutuya ise **doğuya doğru** bir kuvvet uygulanıyor. Kuvvetin yönünü ve doğrultusunu seçin.",
@@ -321,9 +321,9 @@
     "duration": 7.14
   },
   "s8.t2.dogru": {
-    "text": "Harika! Takım içindeki kuvvetler aynı yönlü olduğu için **toplandı**; takımların kuvvetleri zıt yönlü olduğu için **çıkarıldı**.",
+    "text": "Tebrikler! Takım içindeki kuvvetler aynı yönlü olduğu için **toplandı**; takımların kuvvetleri zıt yönlü olduğu için **çıkarıldı**.",
     "file": "s8.t2.dogru.mp3",
-    "duration": 6.64
+    "duration": 6.82
   },
   "s9.a": {
     "text": "**Kuvvet Laboratuvarı**'na hoş geldiniz. Burada kuvvetleri siz değiştirebilirsiniz.",
@@ -430,9 +430,9 @@
     "duration": 1.68
   },
   "s10.dogru2": {
-    "text": "Harika! Bir sonraki göreve geçelim.",
+    "text": "Tebrikler! Bir sonraki göreve geçelim.",
     "file": "s10.dogru2.mp3",
-    "duration": 2.01
+    "duration": 2.17
   },
   "s10.son": {
     "text": "Bütün görevleri tamamladınız. **Tebrikler!**",
@@ -465,9 +465,9 @@
     "duration": 2.72
   },
   "s11.dogru": {
-    "text": "Doğru! Harika gidiyorsunuz.",
+    "text": "Doğru! Tebrikler, çok iyi gidiyorsunuz.",
     "file": "s11.dogru.mp3",
-    "duration": 1.64
+    "duration": 2.32
   },
   "s11.ozet": {
     "text": "**Bileşke kuvvet**, bir cisme etki eden kuvvetlerin etkisini tek başına yapabilen kuvvettir. Aynı yönlü kuvvetlerde büyüklükler **toplanır**. Zıt yönlü kuvvetlerde büyükten küçük **çıkarılır** ve bileşke büyük kuvvetin yönünde olur.",
