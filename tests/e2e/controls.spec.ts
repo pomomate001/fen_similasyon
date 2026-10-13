@@ -26,7 +26,8 @@ test.describe('öğretmen kontrolleri', () => {
   });
 
   test('hızlı art arda Devam Et tıklamaları birden fazla sahne atlatmaz', async ({ page }) => {
-    await openScene(page, 1, 'ses=0&hiz=20');
+    // Normal hızda: Sahne 2 tıklamalar sırasında bitmiş olmasın (yalnızca hızlı tıklama sınanır)
+    await openScene(page, 1, 'ses=0&hiz=1');
     const btn = page.getByTestId('continue');
     await expect(btn).toHaveClass(/ready/, { timeout: 60_000 });
     await btn.click();
@@ -131,5 +132,45 @@ test.describe('ses', () => {
     await expect(page.getByTestId('scene-yercekimi')).toBeVisible();
     await expect(page.getByTestId('subtitle')).toContainText('yerçekimi', { timeout: 30_000 });
     expect(errors.filter((e) => !/404|Failed to load resource/.test(e))).toEqual([]);
+  });
+});
+
+test.describe('halat çekme: takım kurma', () => {
+  test('yanlış takım kurulunca oyuncular çıkarılıp yeniden denenebilir', async ({ page }) => {
+    await page.goto('/?ses=0&hiz=20#/sim/bileske-kuvvet?sahne=8');
+    await page.getByTestId('predict-dogu').click();
+    const s = (await page.getByTestId('stage').boundingBox())!.width / 1920;
+    const h = (await page.getByTestId('r-drawer-handle').boundingBox())!;
+    await page.mouse.move(h.x + h.width / 2, h.y + h.height / 2);
+    await page.mouse.down();
+    await page.mouse.move(h.x + h.width / 2 + 60 * s, h.y + h.height / 2, { steps: 4 });
+    await page.mouse.move(h.x + h.width / 2 + 120 * s, h.y + h.height / 2, { steps: 4 });
+    await page.mouse.up();
+    await page.getByTestId('check').click();
+    await expect(page.getByTestId('bench-a')).toBeVisible({ timeout: 60_000 });
+
+    // Tüm oyuncuları yanlış dağıt: turuncu 10+20+20=50, yeşil 30+40=70 → yanlış
+    for (const [b, t] of [['a', 'turuncu'], ['b', 'turuncu'], ['c', 'turuncu'], ['d', 'yesil'], ['e', 'yesil']]) {
+      await page.getByTestId(`bench-${b}`).click();
+      await page.getByTestId(`team-${t}`).click();
+    }
+    await page.getByTestId('check').click();
+    await expect(page.getByTestId('feedback-hint')).toBeVisible({ timeout: 30_000 });
+
+    // Yeniden deneme: çıkarma düğmesiyle ve doğrudan oyuncuya dokunarak
+    await page.getByTestId('remove-a').click();
+    await page.getByTestId('member-d').click({ force: true });
+    await expect(page.getByTestId('bench-a')).toBeVisible();
+    await expect(page.getByTestId('bench-d')).toBeVisible();
+    // Takımları boşalt
+    await page.getByTestId('reset-teams').click();
+    await expect(page.getByTestId('total-turuncu')).toContainText('0 N');
+    // Doğru kurulum: turuncu 30+20=50, yeşil 40
+    for (const [b, t] of [['d', 'turuncu'], ['b', 'turuncu'], ['e', 'yesil']]) {
+      await page.getByTestId(`bench-${b}`).click();
+      await page.getByTestId(`team-${t}`).click();
+    }
+    await page.getByTestId('check').click();
+    await expect(page.getByTestId('arrow-r-true')).toHaveAttribute('data-sign', '-1', { timeout: 60_000 });
   });
 });

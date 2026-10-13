@@ -129,7 +129,7 @@ export function S08Halat() {
         text:
           L.length === 0 || Rr.length === 0
             ? 'Her takımda en az bir oyuncu olmalı.'
-            : `Şu an: ${describeResultant(res)}. Turuncu takım 10 N fazla olmalı.`,
+            : `Şu an: ${describeResultant(res)}. Oyuncuya dokunup çıkararak yeniden deneyin.`,
       });
       await s.say('s8.t2.ipucu');
     }
@@ -271,11 +271,42 @@ export function S08Halat() {
                 border: `5px dashed ${picked ? (t === 'turuncu' ? ORANGE : GREEN) : 'transparent'}`,
                 background: picked ? 'rgba(255,255,255,0.18)' : 'transparent',
                 cursor: picked ? 'pointer' : 'default',
+                // Oyuncu seçili değilken alan dokunmayı engellemez: takımdaki oyunculara
+                // dokunup onları çıkarmak (yeniden denemek) mümkün olur.
+                pointerEvents: picked ? 'auto' : 'none',
+              }}
+            />
+          ))}
+          {(['turuncu', 'yesil'] as Team[]).map((t) => (
+            <div
+              key={`m-${t}`}
+              className="fade-in"
+              data-testid={`members-${t}`}
+              style={{
+                position: 'absolute',
+                top: 222,
+                left: t === 'turuncu' ? 60 : 'auto',
+                right: t === 'yesil' ? 60 : 'auto',
+                display: 'flex',
+                gap: 10,
+                flexDirection: t === 'yesil' ? 'row-reverse' : 'row',
               }}
             >
+              {members[t].map((id) => (
+                <button
+                  key={id}
+                  className="chip"
+                  data-testid={`remove-${id}`}
+                  aria-label={`${value(id)} N oyuncuyu takımdan çıkar`}
+                  style={{ minHeight: 64, padding: '0 18px', fontSize: 26, borderColor: t === 'turuncu' ? ORANGE : GREEN }}
+                  onClick={() => removeFrom(t, id)}
+                >
+                  {value(id)} N <span style={{ fontSize: 24, color: 'var(--ink-soft)' }}>✕</span>
+                </button>
+              ))}
             </div>
           ))}
-          <div className="fade-in" style={{ position: 'absolute', left: 300, right: 300, top: 790, display: 'flex', gap: 16, justifyContent: 'center', alignItems: 'center' }}>
+          <div className="fade-in" style={{ position: 'absolute', left: 160, right: 160, top: 790, display: 'flex', gap: 14, justifyContent: 'center', alignItems: 'center' }}>
             {benchFree.map((b) => (
               <button
                 key={b.id}
@@ -290,6 +321,19 @@ export function S08Halat() {
                 {b.n} N
               </button>
             ))}
+            <button
+              className="btn"
+              data-testid="reset-teams"
+              disabled={members.turuncu.length + members.yesil.length === 0}
+              onClick={() => {
+                sfx.tap();
+                setFb(null);
+                setPicked(null);
+                setMembers({ turuncu: [], yesil: [] });
+              }}
+            >
+              Takımları boşalt
+            </button>
             <button className="btn btn-primary" data-testid="check" onClick={() => check.fire()}>
               Kontrol Et
             </button>
