@@ -1,0 +1,845 @@
+@import '@fontsource-variable/lexend';
+
+/* ---- Renk ve tipografi değişkenleri ---------------------------------------
+   Kırmızı yalnızca UYGULANAN KUVVETLER, mavi yalnızca BİLEŞKE KUVVET içindir.
+   Yanlış cevap hiçbir zaman kırmızıyla gösterilmez (ipucu = amber). */
+:root {
+  --font: 'Lexend Variable', 'Segoe UI', system-ui, sans-serif;
+
+  --ink: #1b2333;
+  --ink-soft: #4a566b;
+  --ink-faint: #8a94a6;
+  --paper: #fbf8f2;
+  --paper-2: #f1ece2;
+  --line-ui: #dcd5c7;
+
+  --force: #e5383b;
+  --force-dark: #a81d24;
+  --resultant: #1f6fe5;
+  --resultant-dark: #1249a3;
+  --point: #ffb020;
+  --direction-line: #5d6b82;
+
+  --interact: #6d4aff;
+  --interact-dark: #4b2fd1;
+  --interact-soft: #ece7ff;
+
+  --success: #24995a;
+  --success-soft: #def4e7;
+  --hint: #e08a00;
+  --hint-soft: #fff1d6;
+
+  --app-bg: #0e1726;
+  --chrome: #ffffff;
+
+  --r-lg: 28px;
+  --r-md: 18px;
+  --shadow: 0 10px 30px rgba(17, 26, 45, 0.16), 0 2px 6px rgba(17, 26, 45, 0.08);
+  --shadow-sm: 0 4px 14px rgba(17, 26, 45, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--app-bg);
+  font-family: var(--font);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  overscroll-behavior: none;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ---- 16:9 sahne: 1920×1080 mantıksal alan, ekrana oranı korunarak sığar ---- */
+.stage-viewport {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 700px at 50% 40%, #1a2944 0%, transparent 70%),
+    var(--app-bg);
+  touch-action: none;
+}
+
+.stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  background: var(--paper);
+  border-radius: 0;
+  touch-action: none;
+}
+
+.scene-svg {
+  position: absolute;
+  inset: 0;
+  width: 1920px;
+  height: 1080px;
+  display: block;
+}
+
+.scene-layer {
+  position: absolute;
+  inset: 0;
+  animation: scene-in 0.5s ease both;
+}
+
+@keyframes scene-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---- SVG içi metinler ---- */
+.svg-label {
+  font-family: var(--font);
+  font-weight: 650;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 8px;
+  stroke-linejoin: round;
+}
+
+.svg-title {
+  font-family: var(--font);
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+/* ---- Düğmeler ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 84px;
+  min-width: 84px;
+  padding: 0 34px;
+  border-radius: 999px;
+  border: 0;
+  font-size: 30px;
+  font-weight: 650;
+  cursor: pointer;
+  background: var(--chrome);
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background 0.2s ease,
+    opacity 0.2s ease;
+  touch-action: manipulation;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:disabled {
+  opacity: 0.38;
+  cursor: default;
+  transform: none;
+}
+
+.btn-primary {
+  background: var(--interact);
+  color: #fff;
+}
+
+.btn-primary:not(:disabled):hover {
+  background: var(--interact-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn-icon {
+  padding: 0;
+  width: 88px;
+  height: 88px;
+}
+
+.btn svg {
+  width: 38px;
+  height: 38px;
+  flex: none;
+}
+
+/* ---- Üst çubuk ---- */
+.topbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 28px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.topbar > * {
+  pointer-events: auto;
+}
+
+.topbar .sim-title {
+  font-size: 28px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  padding: 14px 28px;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+
+.progress {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  padding: 10px 26px;
+  box-shadow: var(--shadow-sm);
+}
+
+.progress-part {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-part-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-right: 4px;
+}
+
+.progress-part.is-current .progress-part-name {
+  color: var(--interact-dark);
+}
+
+.dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid var(--line-ui);
+  background: #fff;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.dot::after {
+  /* görünmez geniş dokunma alanı */
+  content: '';
+  position: absolute;
+  inset: -12px -6px;
+}
+
+.dot.done {
+  background: var(--interact-soft);
+  border-color: var(--interact);
+}
+
+.dot.current {
+  background: var(--interact);
+  border-color: var(--interact);
+  box-shadow: 0 0 0 6px rgba(109, 74, 255, 0.18);
+}
+
+/* ---- Alt kontrol çubuğu ---- */
+.dock {
+  position: absolute;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow);
+  z-index: 25;
+}
+
+.dock.side-left {
+  left: 28px;
+}
+
+.dock.side-right {
+  right: 28px;
+}
+
+.dock .btn {
+  box-shadow: none;
+  background: var(--paper-2);
+}
+
+.dock .btn.is-on {
+  background: var(--interact-soft);
+  color: var(--interact-dark);
+}
+
+.continue {
+  position: absolute;
+  bottom: 22px;
+  width: 196px;
+  height: 196px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--interact);
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 26;
+  box-shadow:
+    0 14px 34px rgba(75, 47, 209, 0.45),
+    inset 0 -6px 0 rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.25s cubic-bezier(0.3, 1.6, 0.5, 1),
+    opacity 0.25s ease,
+    background 0.2s;
+  touch-action: manipulation;
+}
+
+.continue svg {
+  width: 56px;
+  height: 56px;
+}
+
+.continue.side-right {
+  right: 30px;
+}
+
+.continue.side-left {
+  left: 30px;
+}
+
+.continue:disabled {
+  background: #cfc8e8;
+  box-shadow: none;
+  transform: scale(0.82);
+  opacity: 0.55;
+  cursor: default;
+}
+
+.continue.ready {
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.continue.ready:active {
+  transform: scale(0.94);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 14px 34px rgba(75, 47, 209, 0.45),
+      0 0 0 0 rgba(109, 74, 255, 0.45);
+  }
+  50% {
+    box-shadow:
+      0 14px 34px rgba(75, 47, 209, 0.45),
+      0 0 0 26px rgba(109, 74, 255, 0);
+  }
+}
+
+/* ---- Altyazı ---- */
+.subtitle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 140px;
+  max-width: 1280px;
+  min-height: 0;
+  padding: 18px 34px;
+  border-radius: 26px;
+  background: rgba(20, 28, 44, 0.86);
+  color: #fff;
+  font-size: 34px;
+  line-height: 1.38;
+  font-weight: 500;
+  text-align: center;
+  z-index: 18;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.subtitle em {
+  font-style: normal;
+  font-weight: 700;
+  color: #ffd166;
+}
+
+.subtitle.hidden {
+  opacity: 0;
+}
+
+/* ---- Paneller / diyaloglar ---- */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 23, 38, 0.42);
+  animation: scene-in 0.2s ease both;
+}
+
+.pause-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  padding: 50px 70px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.pause-card .btn {
+  font-size: 34px;
+  min-height: 110px;
+  padding: 0 60px;
+}
+
+.dialog {
+  width: 860px;
+  padding: 46px 52px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.dialog h2 {
+  margin: 0 0 14px;
+  font-size: 42px;
+}
+
+.dialog p {
+  margin: 0 0 30px;
+  font-size: 30px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
+.dialog .row {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.teacher-panel {
+  position: absolute;
+  top: 112px;
+  right: 28px;
+  width: 700px;
+  max-height: 740px;
+  overflow: hidden;
+  z-index: 30;
+  padding: 32px 36px;
+  border-radius: var(--r-lg);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  animation: scene-in 0.2s ease both;
+}
+
+.teacher-panel h3 {
+  margin: 0 0 6px;
+  font-size: 30px;
+}
+
+.teacher-panel .sub {
+  margin: 0 0 18px;
+  font-size: 22px;
+  color: var(--ink-soft);
+}
+
+.teacher-panel ul {
+  margin: 0 0 20px;
+  padding-left: 26px;
+  font-size: 24px;
+  line-height: 1.42;
+}
+
+.teacher-panel li {
+  margin-bottom: 10px;
+}
+
+.teacher-panel .row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 22px;
+  color: var(--ink-soft);
+}
+
+.teacher-panel .btn {
+  min-height: 64px;
+  font-size: 22px;
+  padding: 0 24px;
+}
+
+/* ---- Sahne içi HTML bileşenleri ---- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 88px;
+  padding: 0 30px;
+  border-radius: 22px;
+  border: 4px solid var(--line-ui);
+  background: #fff;
+  font-size: 30px;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease;
+  touch-action: none;
+}
+
+.chip.selected {
+  border-color: var(--interact);
+  background: var(--interact-soft);
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 6px rgba(109, 74, 255, 0.2), var(--shadow-sm);
+}
+
+.chip.correct {
+  border-color: var(--success);
+  background: var(--success-soft);
+}
+
+.chip.hint {
+  border-color: var(--hint);
+  background: var(--hint-soft);
+}
+
+.chip:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.panel {
+  position: absolute;
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow);
+  padding: 28px 32px;
+}
+
+.panel h3 {
+  margin: 0 0 14px;
+  font-size: 30px;
+}
+
+.prompt-card {
+  position: absolute;
+  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 118px;
+  padding: 20px 40px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  font-size: 34px;
+  font-weight: 650;
+  text-align: center;
+  max-width: 1400px;
+  z-index: 5;
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stepper .btn {
+  width: 84px;
+  height: 84px;
+  padding: 0;
+  font-size: 44px;
+}
+
+.stepper .value {
+  min-width: 150px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.equation {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.badge-model {
+  position: absolute;
+  pointer-events: none;
+  left: 28px;
+  top: 112px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 21px;
+  color: var(--ink-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+.feedback {
+  position: absolute;
+  z-index: 15;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 30px;
+  border-radius: 22px;
+  font-size: 30px;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  animation: feedback-in 0.35s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+
+@keyframes feedback-in {
+  from {
+    scale: 0.8;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.feedback svg {
+  width: 40px;
+  height: 40px;
+  flex: none;
+}
+
+.feedback {
+  max-width: 1100px;
+}
+
+.feedback.leaving {
+  animation: feedback-out 0.45s ease forwards;
+}
+
+/* Not: inline transform (ortalama için translateX) bozulmasın diye ayrı scale/translate özellikleri kullanılır */
+@keyframes feedback-out {
+  to {
+    opacity: 0;
+    translate: 0 -12px;
+    scale: 0.96;
+  }
+}
+
+.feedback.ok {
+  background: var(--success-soft);
+  color: #12673b;
+}
+
+.feedback.hint {
+  background: var(--hint-soft);
+  color: #7a4b00;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: scene-in 0.4s ease both;
+}
+
+.hit {
+  cursor: pointer;
+}
+
+.draggable {
+  cursor: grab;
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
+/* SVG dokunma hedeflerinde varsayılan dokunma davranışı kapalı */
+svg * {
+  touch-action: none;
+}
+
+/* ---- Vurgu halkaları ve başarı efektleri ---- */
+.glow-ring {
+  fill: none;
+  stroke: var(--point);
+  stroke-width: 7;
+  animation: glow 1.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.18);
+  }
+}
+
+.handle-idle {
+  animation: glow 1.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.burst-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: burst 0.9s ease-out both;
+}
+
+.burst-ray {
+  animation: ray 0.9s ease-out both;
+}
+
+@keyframes burst {
+  from {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+@keyframes ray {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ---- Kural kartı ---- */
+.rule-card {
+  position: absolute;
+  width: 520px;
+  padding: 26px 30px 28px;
+  border-radius: 26px;
+  background: linear-gradient(160deg, #ffffff 0%, #f3efff 100%);
+  border: 4px solid var(--interact);
+  box-shadow: var(--shadow);
+  animation: card-in 0.7s cubic-bezier(0.25, 1.4, 0.5, 1) both;
+  z-index: 8;
+}
+
+.rule-card-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--interact);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.rule-card-title {
+  margin: 14px 0 8px;
+  font-size: 34px;
+  font-weight: 750;
+}
+
+.rule-card-body {
+  font-size: 26px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+@keyframes card-in {
+  from {
+    transform: translateY(40px) rotate(-4deg) scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* ---- Zaman durdurma efekti ---- */
+.time-freeze {
+  transition: filter 0.6s ease;
+}
+
+.time-freeze.frozen {
+  filter: saturate(0.25) brightness(1.06);
+}

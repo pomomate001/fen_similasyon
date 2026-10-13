@@ -1,0 +1,503 @@
+{
+  "s1.a": {
+    "text": "Kuvvetin etkilerinden biri de **duran cisimleri harekete geçirmesidir**.",
+    "file": "s1.a.mp3",
+    "duration": 3.73
+  },
+  "s1.b": {
+    "text": "Peki, sizce bu elmanın yere düşmesini sağlayan **kuvvet** nedir?",
+    "file": "s1.b.mp3",
+    "duration": 3.72
+  },
+  "s2.a": {
+    "text": "Elmanın yere düşmesinin nedeni, Dünya'nın elmaya uyguladığı **yerçekimi kuvvetidir**.",
+    "file": "s2.a.mp3",
+    "duration": 4.52
+  },
+  "s2.b": {
+    "text": "Dünya, kütlesi olan cisimlere yerçekimi kuvveti uygular. Bu kuvvet, cisimleri **Dünya'nın merkezine doğru** çeker.",
+    "file": "s2.b.mp3",
+    "duration": 6.32
+  },
+  "s2.c": {
+    "text": "Bu yüzden Dünya'nın neresinde olursak olalım, düşen cisimler hep **aşağı**, yani Dünya'nın merkezine doğru düşer.",
+    "file": "s2.c.mp3",
+    "duration": 6.2
+  },
+  "s2.d": {
+    "text": "Elma daldayken de yerçekimi kuvveti vardı. O sırada elmayı **sapı tutuyordu**. Sap kopunca elma düştü.",
+    "file": "s2.d.mp3",
+    "duration": 5.84
+  },
+  "s3.intro": {
+    "text": "Bir kuvveti tanımlamak için dört özelliğine bakarız: **uygulama noktası, yön, doğrultu ve büyüklük**.",
+    "file": "s3.intro.mp3",
+    "duration": 5.64
+  },
+  "s3.nokta": {
+    "text": "Kuvvetin cisme etki ettiği noktaya **uygulama noktası** denir. Kuvvet oku bu noktadan başlayarak çizilir.",
+    "file": "s3.nokta.mp3",
+    "duration": 5.85
+  },
+  "s3.yon": {
+    "text": "Okun ucu kuvvetin **yönünü** gösterir. Yerçekimi kuvvetinin yönü **aşağı doğrudur**.",
+    "file": "s3.yon.mp3",
+    "duration": 4.4
+  },
+  "s3.dogrultu": {
+    "text": "Kuvvetin üzerinde bulunduğu çizgiye **doğrultu** denir. Bu kuvvet **düşey** doğrultudadır. Bir doğrultu, birbirine zıt iki yönü kapsar: yukarı ve aşağı.",
+    "file": "s3.dogrultu.mp3",
+    "duration": 8.44
+  },
+  "s3.buyukluk1": {
+    "text": "Kuvvetin **büyüklüğü** newton ile ölçülür ve **N** harfiyle gösterilir. Okun uzunluğu, kuvvetin büyüklüğünü gösterir.",
+    "tts": "Kuvvetin büyüklüğü newton ile ölçülür ve büyük N harfiyle gösterilir. Okun uzunluğu, kuvvetin büyüklüğünü gösterir.",
+    "file": "s3.buyukluk1.mp3",
+    "duration": 6.42
+  },
+  "s3.buyukluk2": {
+    "text": "Bu çizimde her kare **1 newtonu** gösteriyor. Yaklaşık yüz gramlık bir elmaya etki eden yerçekimi kuvveti yaklaşık **1 N**'dur.",
+    "tts": "Bu çizimde her kare bir newtonu gösteriyor. Yaklaşık yüz gramlık bir elmaya etki eden yerçekimi kuvveti yaklaşık bir newtondur.",
+    "file": "s3.buyukluk2.mp3",
+    "duration": 7.16
+  },
+  "s3.buyukluk3": {
+    "text": "İki elmalık bir torbaya etki eden yerçekimi kuvveti yaklaşık 2 N, üç elmalık torbaya etki eden yaklaşık 3 N'dur. **Kuvvet büyüdükçe ok da uzar.**",
+    "tts": "İki elmalık bir torbaya etki eden yerçekimi kuvveti yaklaşık iki newton, üç elmalık torbaya etki eden yaklaşık üç newtondur. Kuvvet büyüdükçe ok da uzar.",
+    "file": "s3.buyukluk3.mp3",
+    "duration": 9.16
+  },
+  "s3.etkinlik": {
+    "text": "Şimdi sıra sizde. Dört etiketi okun üzerindeki **doğru yerlere** yerleştirin. Önce etikete, sonra yerine dokunabilirsiniz.",
+    "file": "s3.etkinlik.mp3",
+    "duration": 6.86
+  },
+  "s3.etkinlik.ipucu": {
+    "text": "Bazı etiketler yerinde değil. Okun başladığı nokta, okun ucu, çizgi ve okun uzunluğu neyi gösteriyordu?",
+    "file": "s3.etkinlik.ipucu.mp3",
+    "duration": 6.11
+  },
+  "s3.etkinlik.dogru": {
+    "text": "Harika! Kuvvetin dört özelliğini de doğru yerleştirdiniz.",
+    "file": "s3.etkinlik.dogru.mp3",
+    "duration": 3.21
+  },
+  "s3.transfer": {
+    "text": "Bu kutuya ise **doğuya doğru** bir kuvvet uygulanıyor. Kuvvetin yönünü ve doğrultusunu seçin.",
+    "file": "s3.transfer.mp3",
+    "duration": 4.96
+  },
+  "s3.transfer.ipucu.yon": {
+    "text": "Yön, okun ucunun gösterdiği taraftır. Okun ucu hangi tarafı gösteriyor?",
+    "file": "s3.transfer.ipucu.yon.mp3",
+    "duration": 4.16
+  },
+  "s3.transfer.ipucu.dogrultu": {
+    "text": "Doğrultu iki zıt yönü kapsar. Ok yatay olarak doğu ile batı arasında uzanıyor.",
+    "file": "s3.transfer.ipucu.dogrultu.mp3",
+    "duration": 4.56
+  },
+  "s3.transfer.dogru": {
+    "text": "Doğru! Kuvvet **doğu yönünde** ve **doğu–batı doğrultusunda**.",
+    "tts": "Doğru! Kuvvet doğu yönünde ve doğu batı doğrultusunda.",
+    "file": "s3.transfer.dogru.mp3",
+    "duration": 3.15
+  },
+  "s4.a": {
+    "text": "Bir topu yukarı doğru attığımızda top önce **yükselir**, ardından yeniden yere **düşer**.",
+    "file": "s4.a.mp3",
+    "duration": 4.68
+  },
+  "s4.b": {
+    "text": "Topa ilk hareketini **elimiz** verdi. Peki, topun tekrar aşağı dönmesini sağlayan nedir?",
+    "file": "s4.b.mp3",
+    "duration": 5.09
+  },
+  "s4.c": {
+    "text": "Topun aşağı dönmesinin nedeni, Dünya'nın topa uyguladığı **yerçekimi kuvvetidir**.",
+    "file": "s4.c.mp3",
+    "duration": 4.31
+  },
+  "s4.d": {
+    "text": "Şimdi topun **üç farklı anına** bakalım. Her anda topa hangi kuvvetler etki ediyor? Okları topların üzerine yerleştirin, sonra **Kontrol Et**'e basın.",
+    "tts": "Şimdi topun üç farklı anına bakalım. Her anda topa hangi kuvvetler etki ediyor? Okları topların üzerine yerleştirin, sonra kontrol et düğmesine basın.",
+    "file": "s4.d.mp3",
+    "duration": 8.48
+  },
+  "s4.fb.yukari": {
+    "text": "Top elden ayrıldıktan sonra elimiz topa değmiyor. **Topa değmeyen el, ona kuvvet uygulayamaz.** Topun yükselmesi, ona yukarı yönde bir kuvvet etki ettiğini göstermez.",
+    "file": "s4.fb.yukari.mp3",
+    "duration": 9.5
+  },
+  "s4.fb.yercekimi": {
+    "text": "Dünya topu **her an** çeker: elde iken de, yükselirken de, düşerken de. Yerçekimi kuvvetini unutmayalım.",
+    "file": "s4.fb.yercekimi.mp3",
+    "duration": 6.24
+  },
+  "s4.fb.el": {
+    "text": "İlk anda el topa değiyor ve onu **yukarı doğru itiyor**. Elin kuvvetini de ekleyelim.",
+    "file": "s4.fb.el.mp3",
+    "duration": 4.64
+  },
+  "s4.fb.elhavada": {
+    "text": "Havadaki topa el değmiyor. Elin kuvvetini yalnızca topun elde olduğu anda gösterebiliriz.",
+    "file": "s4.fb.elhavada.mp3",
+    "duration": 5.08
+  },
+  "s4.dogru": {
+    "text": "Hepsi doğru! Top **yükselirken bile** ona yalnızca aşağı yönde yerçekimi kuvveti etki ediyor.",
+    "file": "s4.dogru.mp3",
+    "duration": 5.1
+  },
+  "s4.end": {
+    "text": "Dikkat ettiniz mi? Top eldeyken ona **aynı anda iki kuvvet** etki ediyordu. Bir cisme birden fazla kuvvet etki ettiğinde ne olur? Şimdi bunu keşfedelim.",
+    "file": "s4.end.mp3",
+    "duration": 8.72
+  },
+  "s5.a": {
+    "text": "İki arkadaş bir arabayı **doğuya** doğru hareket ettirmek istiyor. Biri arabayı arkadan **30 N** ile itiyor, diğeri önden ipiyle **20 N** ile çekiyor.",
+    "tts": "İki arkadaş bir arabayı doğuya doğru hareket ettirmek istiyor. Biri arabayı arkadan otuz newton ile itiyor, diğeri önden ipiyle yirmi newton ile çekiyor.",
+    "file": "s5.a.mp3",
+    "duration": 8.64
+  },
+  "s5.a2": {
+    "text": "Kuvvetlerin uygulama noktaları farklı ama ikisi de **doğu yönünde**. Yani bu kuvvetler **aynı yönlü**.",
+    "file": "s5.a2.mp3",
+    "duration": 5.42
+  },
+  "s5.b": {
+    "text": "Bu iki kuvvetin etkisini **tek başına** yapabilecek bir robot ayarlayalım. Robotun okunu uzatarak kuvvetini seçin, sonra **Dene**'ye basın.",
+    "tts": "Bu iki kuvvetin etkisini tek başına yapabilecek bir robot ayarlayalım. Robotun okunu uzatarak kuvvetini seçin, sonra dene düğmesine basın.",
+    "file": "s5.b.mp3",
+    "duration": 7.72
+  },
+  "s5.fb.az": {
+    "text": "Robotun arabası **geride kaldı**. Robotun kuvveti, iki arkadaşın birlikte yaptığı etkiden küçük. Kuvveti artırıp tekrar deneyin.",
+    "file": "s5.fb.az.mp3",
+    "duration": 7.24
+  },
+  "s5.fb.cok": {
+    "text": "Robotun arabası **öne geçti**. Bu kuvvet gereğinden büyük. Biraz azaltıp tekrar deneyin.",
+    "file": "s5.fb.cok.mp3",
+    "duration": 4.92
+  },
+  "s5.fb.dogru": {
+    "text": "Harika! İki araba **tamamen aynı** hareket etti. Robotun 50 N'luk kuvveti, iki arkadaşın kuvvetlerinin etkisini tek başına yaptı.",
+    "tts": "Harika! İki araba tamamen aynı hareket etti. Robotun elli newtonluk kuvveti, iki arkadaşın kuvvetlerinin etkisini tek başına yaptı.",
+    "file": "s5.fb.dogru.mp3",
+    "duration": 7.68
+  },
+  "s5.tanim": {
+    "text": "Bir cisme etki eden birden fazla kuvvetin etkisini tek başına yapabilen kuvvete **bileşke kuvvet** denir. Bileşke kuvvete **net kuvvet** de denir ve **R** harfiyle gösterilir.",
+    "tts": "Bir cisme etki eden birden fazla kuvvetin etkisini tek başına yapabilen kuvvete bileşke kuvvet denir. Bileşke kuvvete net kuvvet de denir ve büyük R harfiyle gösterilir.",
+    "file": "s5.tanim.mp3",
+    "duration": 9.53
+  },
+  "s5.toplama": {
+    "text": "Kuvvetler aynı doğrultuda ve **aynı yönde** olduğunda, bileşke kuvvetin büyüklüğünü bulmak için kuvvetlerin büyüklüklerini **toplarız**. Okları uç uca ekleyerek de görebiliriz.",
+    "file": "s5.toplama.mp3",
+    "duration": 9.19
+  },
+  "s5.sonuc": {
+    "text": "R = 30 N + 20 N = **50 N**. Bileşke kuvvet de **doğu yönünde** ve doğu–batı doğrultusunda.",
+    "tts": "Bileşke kuvvet, otuz newton artı yirmi newton, yani elli newtondur. Bileşke kuvvet de doğu yönünde ve doğu batı doğrultusundadır.",
+    "file": "s5.sonuc.mp3",
+    "duration": 7.69
+  },
+  "s5.kart": {
+    "text": "İlk kural kartını kazandınız: **Aynı yönlü kuvvetlerin büyüklükleri toplanır.**",
+    "file": "s5.kart.mp3",
+    "duration": 4.25
+  },
+  "s6.a": {
+    "text": "Bu oyuncak roketin motoru çalıştığında roket yukarı doğru itilir. Roketin **rampadan ayrıldığı anı** durdurduk.",
+    "file": "s6.a.mp3",
+    "duration": 5.99
+  },
+  "s6.b": {
+    "text": "Bu anda rokete iki kuvvet etki ediyor: motorun uyguladığı **100 N**'luk kuvvet ve Dünya'nın uyguladığı **10 N**'luk yerçekimi kuvveti.",
+    "tts": "Bu anda rokete iki kuvvet etki ediyor: motorun uyguladığı yüz newtonluk kuvvet ve Dünyanın uyguladığı on newtonluk yerçekimi kuvveti.",
+    "file": "s6.b.mp3",
+    "duration": 7.57
+  },
+  "s6.c": {
+    "text": "Bu basitleştirilmiş modelde hava direncini ihmal ediyoruz. Şimdi bu iki kuvveti **doğru yönlere** yerleştirelim.",
+    "file": "s6.c.mp3",
+    "duration": 6.13
+  },
+  "s6.fb.eksik": {
+    "text": "İki kuvvetin de roketin üzerine yerleştirilmesi gerekiyor.",
+    "file": "s6.fb.eksik.mp3",
+    "duration": 3.15
+  },
+  "s6.fb.yanlis": {
+    "text": "Kuvvetlerin yönlerini tekrar inceleyelim. **Yerçekimi hangi yönde** etki ediyordu? Motor roketi hangi yöne itiyor?",
+    "file": "s6.fb.yanlis.mp3",
+    "duration": 6.23
+  },
+  "s6.fb.dogru": {
+    "text": "Çok güzel! Motor kuvveti **yukarı**, yerçekimi kuvveti **aşağı** doğru.",
+    "file": "s6.fb.dogru.mp3",
+    "duration": 3.86
+  },
+  "s7.a": {
+    "text": "Rokete etki eden iki kuvvet **aynı doğrultuda** ama **zıt yönlerde**.",
+    "file": "s7.a.mp3",
+    "duration": 3.73
+  },
+  "s7.b": {
+    "text": "Zıt yönlü kuvvetlerin bileşkesinin büyüklüğünü bulmak için **büyük kuvvetten küçük kuvveti çıkarırız**. Oklar üst üste gelince, birbirini götüren kısımlar silinir.",
+    "file": "s7.b.mp3",
+    "duration": 8.74
+  },
+  "s7.c": {
+    "text": "R = 100 N − 10 N = **90 N**.",
+    "tts": "Bileşke kuvvet, yüz newton eksi on newton, yani doksan newtondur.",
+    "file": "s7.c.mp3",
+    "duration": 4.12
+  },
+  "s7.d": {
+    "text": "Büyük kuvvet yukarı yönlü olduğu için bileşke kuvvet de **yukarı yönlüdür**. Bileşke kuvveti **mavi okla** gösteriyoruz.",
+    "file": "s7.d.mp3",
+    "duration": 6.3
+  },
+  "s7.e": {
+    "text": "Roket başlangıçta duruyordu. Bileşke kuvvet yukarı yönlü olduğu için roket **yukarı doğru harekete geçer** ve giderek hızlanır.",
+    "file": "s7.e.mp3",
+    "duration": 6.98
+  },
+  "s7.kart": {
+    "text": "İkinci kural kartı: Zıt yönlü kuvvetlerde **büyük kuvvetten küçük kuvvet çıkarılır**. Bileşke kuvvet, **büyük kuvvetin yönündedir**.",
+    "file": "s7.kart.mp3",
+    "duration": 7.15
+  },
+  "s8.a": {
+    "text": "Halat çekme oyununda iki takım halata **zıt yönlerde** kuvvet uygular.",
+    "file": "s8.a.mp3",
+    "duration": 3.83
+  },
+  "s8.t1": {
+    "text": "Turuncu takım halatı batıya doğru **40 N**, yeşil takım doğuya doğru **70 N** kuvvetle çekiyor. Önce tahmin edin: halat **hangi yöne** hareket edecek?",
+    "tts": "Turuncu takım halatı batıya doğru kırk newton, yeşil takım doğuya doğru yetmiş newton kuvvetle çekiyor. Önce tahmin edin: halat hangi yöne hareket edecek?",
+    "file": "s8.t1.mp3",
+    "duration": 8.69
+  },
+  "s8.t1.tahmin.dogru": {
+    "text": "Tahmininiz doğru! Şimdi bileşke kuvveti **mavi okla çizin**.",
+    "file": "s8.t1.tahmin.dogru.mp3",
+    "duration": 3.33
+  },
+  "s8.t1.tahmin.yanlis": {
+    "text": "Bakalım! Daha büyük kuvveti hangi takım uyguluyor? Şimdi bileşke kuvveti **mavi okla çizip** kontrol edelim.",
+    "file": "s8.t1.tahmin.yanlis.mp3",
+    "duration": 5.78
+  },
+  "s8.t1.ipucu.yon": {
+    "text": "Hangi takım daha büyük kuvvet uyguluyor? Bileşke kuvvet, **büyük kuvvetin yönündedir**.",
+    "file": "s8.t1.ipucu.yon.mp3",
+    "duration": 4.82
+  },
+  "s8.t1.ipucu.buyukluk": {
+    "text": "Kuvvetler zıt yönlü. **Büyük kuvvetten küçük kuvveti** çıkaralım.",
+    "file": "s8.t1.ipucu.buyukluk.mp3",
+    "duration": 3.46
+  },
+  "s8.t1.dogru": {
+    "text": "Doğru! R = 70 N − 40 N = **30 N**, doğu yönünde. Halat doğuya doğru hareket ediyor.",
+    "tts": "Doğru! Bileşke kuvvet, yetmiş newton eksi kırk newton, yani otuz newton ve doğu yönünde. Halat doğuya doğru hareket ediyor.",
+    "file": "s8.t1.dogru.mp3",
+    "duration": 7.16
+  },
+  "s8.t2": {
+    "text": "Şimdi takımları siz kurun. **Turuncu takım 10 N farkla kazansın.** Bir oyuncuya, sonra bir takıma dokunun.",
+    "tts": "Şimdi takımları siz kurun. Turuncu takım on newton farkla kazansın. Bir oyuncuya, sonra bir takıma dokunun.",
+    "file": "s8.t2.mp3",
+    "duration": 6.15
+  },
+  "s8.t2.ipucu": {
+    "text": "Takım içindeki kuvvetler **aynı yönlüdür**, toplanır. Turuncu takımın toplamı, yeşil takımın toplamından **10 N fazla** olmalı.",
+    "tts": "Takım içindeki kuvvetler aynı yönlüdür, toplanır. Turuncu takımın toplamı, yeşil takımın toplamından on newton fazla olmalı.",
+    "file": "s8.t2.ipucu.mp3",
+    "duration": 7.14
+  },
+  "s8.t2.dogru": {
+    "text": "Harika! Takım içindeki kuvvetler aynı yönlü olduğu için **toplandı**; takımların kuvvetleri zıt yönlü olduğu için **çıkarıldı**.",
+    "file": "s8.t2.dogru.mp3",
+    "duration": 6.64
+  },
+  "s9.a": {
+    "text": "**Kuvvet Laboratuvarı**'na hoş geldiniz. Burada kuvvetleri siz değiştirebilirsiniz.",
+    "tts": "Kuvvet Laboratuvarına hoş geldiniz. Burada kuvvetleri siz değiştirebilirsiniz.",
+    "file": "s9.a.mp3",
+    "duration": 4.36
+  },
+  "s9.b": {
+    "text": "Kırmızı okların ucunu sürükleyerek büyüklüklerini ve yönlerini değiştirin. Önce **mavi okla bileşkeyi tahmin edin**, sonra **Göster**'e basın.",
+    "tts": "Kırmızı okların ucunu sürükleyerek büyüklüklerini ve yönlerini değiştirin. Önce mavi okla bileşkeyi tahmin edin, sonra göster düğmesine basın.",
+    "file": "s9.b.mp3",
+    "duration": 7.75
+  },
+  "s9.done": {
+    "text": "Tebrikler! Aynı yönlü, zıt yönlü ve üç kuvvetli durumları denediniz. İsterseniz denemeye devam edebilirsiniz.",
+    "file": "s9.done.mp3",
+    "duration": 6.32
+  },
+  "s10.intro": {
+    "text": "Şimdi kısa **görevlerle** öğrendiklerimizi uygulayalım. Acele etmeyin; istediğiniz kadar deneyebilirsiniz.",
+    "file": "s10.intro.mp3",
+    "duration": 5.6
+  },
+  "s10.g1": {
+    "text": "**1. görev:** Kartları, kuvvetlerin **aynı yönlü** ya da **zıt yönlü** olmasına göre ayırın.",
+    "tts": "Birinci görev: Kartları, kuvvetlerin aynı yönlü ya da zıt yönlü olmasına göre ayırın.",
+    "file": "s10.g1.mp3",
+    "duration": 4.84
+  },
+  "s10.g2": {
+    "text": "**2. görev:** Kutuya doğu yönünde iki kuvvet uygulanıyor. Kareleri sayın ve **bileşke kuvveti** mavi okla çizin.",
+    "tts": "İkinci görev: Kutuya doğu yönünde iki kuvvet uygulanıyor. Kareleri sayın ve bileşke kuvveti mavi okla çizin.",
+    "file": "s10.g2.mp3",
+    "duration": 6.29
+  },
+  "s10.g3": {
+    "text": "**3. görev:** Bir kutu iple yukarı çekiliyor. Kutuya ipin kuvveti ve yerçekimi kuvveti etki ediyor. Bileşke kuvveti çizin.",
+    "tts": "Üçüncü görev: Bir kutu iple yukarı çekiliyor. Kutuya ipin kuvveti ve yerçekimi kuvveti etki ediyor. Bileşke kuvveti çizin.",
+    "file": "s10.g3.mp3",
+    "duration": 7.14
+  },
+  "s10.g4": {
+    "text": "**4. görev:** Bu kez **her kare 2 N**'u gösteriyor. Kareleri sayarak bileşke kuvveti çizin.",
+    "tts": "Dördüncü görev: Bu kez her kare iki newtonu gösteriyor. Kareleri sayarak bileşke kuvveti çizin.",
+    "file": "s10.g4.mp3",
+    "duration": 5.69
+  },
+  "s10.g5": {
+    "text": "**5. görev:** Masaya üç kuvvet etki ediyor: Biri **iterek**, biri **çekerek** batıya, biri doğuya kuvvet uyguluyor. Bileşke kuvveti çizin.",
+    "tts": "Beşinci görev: Masaya üç kuvvet etki ediyor. Biri iterek, biri çekerek batıya, biri doğuya kuvvet uyguluyor. Bileşke kuvveti çizin.",
+    "file": "s10.g5.mp3",
+    "duration": 7.65
+  },
+  "s10.g6": {
+    "text": "**6. görev:** Bileşke kuvvet **5 N doğu** olmalı. Birinci kuvvet 3 N batı. İkinci kuvveti siz ayarlayın.",
+    "tts": "Altıncı görev: Bileşke kuvvet doğu yönünde beş newton olmalı. Birinci kuvvet batı yönünde üç newton. İkinci kuvveti siz ayarlayın.",
+    "file": "s10.g6.mp3",
+    "duration": 7.65
+  },
+  "s10.ipucu.ayni": {
+    "text": "Kuvvetler aynı yönde. Büyüklüklerini **toplayalım**; bileşke de aynı yönde olur.",
+    "file": "s10.ipucu.ayni.mp3",
+    "duration": 4.42
+  },
+  "s10.ipucu.zit": {
+    "text": "Kuvvetler zıt yönde. **Büyükten küçüğü çıkaralım**; bileşke büyük kuvvetin yönünde olur.",
+    "file": "s10.ipucu.zit.mp3",
+    "duration": 4.8
+  },
+  "s10.ipucu.kare": {
+    "text": "Kareleri tek tek sayalım. **Her karenin kaç newton** olduğuna dikkat edelim.",
+    "file": "s10.ipucu.kare.mp3",
+    "duration": 4.11
+  },
+  "s10.ipucu.uc": {
+    "text": "Önce **aynı yöndeki kuvvetleri toplayalım**, sonra iki yönün toplamlarını karşılaştıralım.",
+    "file": "s10.ipucu.uc.mp3",
+    "duration": 4.73
+  },
+  "s10.ipucu.eksik": {
+    "text": "İkinci kuvvet **doğuya** doğru olmalı ve batıdaki 3 N'dan **5 N daha büyük** olmalı.",
+    "tts": "İkinci kuvvet doğuya doğru olmalı ve batıdaki üç newtondan beş newton daha büyük olmalı.",
+    "file": "s10.ipucu.eksik.mp3",
+    "duration": 5.13
+  },
+  "s10.ipucu.enbuyuk": {
+    "text": "Bileşkenin en büyük olması için bütün kuvvetler **aynı yönde** olmalı.",
+    "file": "s10.ipucu.enbuyuk.mp3",
+    "duration": 3.7
+  },
+  "s10.ipucu.enkucuk": {
+    "text": "Bileşkenin küçülmesi için kuvvetleri **zıt yönlere** ayırın ve iki yönün toplamlarını birbirine yaklaştırın.",
+    "file": "s10.ipucu.enkucuk.mp3",
+    "duration": 5.75
+  },
+  "s10.ipucu.sirala": {
+    "text": "Okların uçlarına bakın: uçlar **aynı tarafı** gösteriyorsa kuvvetler aynı yönlüdür, **zıt tarafları** gösteriyorsa zıt yönlüdür.",
+    "file": "s10.ipucu.sirala.mp3",
+    "duration": 6.87
+  },
+  "s10.dogru1": {
+    "text": "Doğru! Çok iyi gidiyorsunuz.",
+    "file": "s10.dogru1.mp3",
+    "duration": 1.68
+  },
+  "s10.dogru2": {
+    "text": "Harika! Bir sonraki göreve geçelim.",
+    "file": "s10.dogru2.mp3",
+    "duration": 2.01
+  },
+  "s10.son": {
+    "text": "Bütün görevleri tamamladınız. **Tebrikler!**",
+    "file": "s10.son.mp3",
+    "duration": 2.36
+  },
+  "s11.a": {
+    "text": "Neler öğrendiğimizi **son bir kez** kontrol edelim.",
+    "file": "s11.a.mp3",
+    "duration": 2.62
+  },
+  "s11.q1": {
+    "text": "Bu kuvvetin **yönü** ve **doğrultusu** nedir?",
+    "file": "s11.q1.mp3",
+    "duration": 2.13
+  },
+  "s11.q2": {
+    "text": "Bu cisme etki eden **bileşke kuvvet** hangisi?",
+    "file": "s11.q2.mp3",
+    "duration": 2.49
+  },
+  "s11.q3": {
+    "text": "Bileşke kuvvet için hangi cümle doğrudur?",
+    "file": "s11.q3.mp3",
+    "duration": 2.32
+  },
+  "s11.yanlis": {
+    "text": "Tekrar düşünelim. Kural kartlarımızı hatırlayın.",
+    "file": "s11.yanlis.mp3",
+    "duration": 2.72
+  },
+  "s11.dogru": {
+    "text": "Doğru! Harika gidiyorsunuz.",
+    "file": "s11.dogru.mp3",
+    "duration": 1.64
+  },
+  "s11.ozet": {
+    "text": "**Bileşke kuvvet**, bir cisme etki eden kuvvetlerin etkisini tek başına yapabilen kuvvettir. Aynı yönlü kuvvetlerde büyüklükler **toplanır**. Zıt yönlü kuvvetlerde büyükten küçük **çıkarılır** ve bileşke büyük kuvvetin yönünde olur.",
+    "file": "s11.ozet.mp3",
+    "duration": 12.37
+  },
+  "s11.merak": {
+    "text": "Son olarak bir soru: İki takım halatı **aynı büyüklükte** kuvvetle çekiyor. **Sizce ne olur?**",
+    "file": "s11.merak.mp3",
+    "duration": 5.07
+  },
+  "s11.son": {
+    "text": "Bu sorunun cevabını bir sonraki simülasyonda, **dengelenmiş ve dengelenmemiş kuvvetler** konusunda keşfedeceğiz. Tebrikler, Bileşke Kuvvet simülasyonunu tamamladınız!",
+    "file": "s11.son.mp3",
+    "duration": 9.16
+  },
+  "s10.g7": {
+    "text": "**Yıldızlı görev:** 3 N, 4 N ve 5 N'luk kuvvetlerin yönlerini değiştirerek önce **en büyük**, sonra **en küçük** bileşkeyi bulun.",
+    "tts": "Yıldızlı görev: Üç, dört ve beş newtonluk kuvvetlerin yönlerini değiştirerek önce en büyük, sonra en küçük bileşkeyi bulun.",
+    "file": "s10.g7.mp3",
+    "duration": 6.98
+  },
+  "s10.g7.kucuk": {
+    "text": "En büyük bileşkeyi buldunuz! Şimdi yönleri değiştirerek **en küçük** bileşkeyi bulun.",
+    "file": "s10.g7.kucuk.mp3",
+    "duration": 4.4
+  },
+  "s10.ipucu.cizim": {
+    "text": "Mavi okun ucunu sürükleyin ya da çizgi üzerinde bir yere dokunun. Okun uzunluğu bileşkenin büyüklüğünü, ucu yönünü gösterir.",
+    "file": "s10.ipucu.cizim.mp3",
+    "duration": 6.93
+  }
+}
